@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f7fb">
+  <title>Administración de Empleados</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">GESTIÓN DEL EQUIPO</p>
+        <h1>Administración de Empleados</h1>
+        <p class="page-description">Administra la información de tu equipo desde un solo lugar.</p>
+      </div>
+      <div class="team-badge" aria-hidden="true">
+        <span class="team-badge-icon">✦</span>
+        <span>Directorio<br>de equipo</span>
+      </div>
+    </header>
+
+    <section class="panel form-panel" aria-labelledby="form-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PERFIL</p>
+          <h2 id="form-title">Agregar empleado</h2>
+        </div>
+        <span class="step-badge" aria-hidden="true">01</span>
+      </div>
+
+      <form id="employee-form">
+        <input type="hidden" id="employee-id">
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Nombre completo</label>
+            <input id="name" name="name" type="text" placeholder="Ej. Alex Rivera" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="position">Puesto</label>
+            <input id="position" name="position" type="text" placeholder="Ej. Diseñador/a" required>
+          </div>
+          <div class="field field-email">
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" placeholder="alex@empresa.com" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="button button-secondary" id="cancel-edit" type="button" hidden>Cancelar</button>
+          <button class="button button-primary" id="submit-button" type="submit">
+            <span aria-hidden="true">＋</span>
+            Guardar empleado
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel directory-panel" aria-labelledby="list-title">
+      <div class="directory-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">DIRECTORIO</p>
+            <h2 id="list-title">Equipo de trabajo</h2>
+          </div>
+        </div>
+        <span class="employee-count" id="employee-count">0 empleados</span>
+      </div>
+      <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Puesto</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="employee-list"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="page-footer">Tus datos se guardan en este navegador.</footer>
+  </main>
+</body>
+</html>
