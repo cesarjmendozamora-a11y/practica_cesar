@@ -353,10 +353,21 @@ tbody tr:last-child td {
 }
 
 .page-footer {
-  padding-top: 17px;
-  color: #929bad;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
   font-size: 0.75rem;
-  text-align: center;
+}
+
+.page-footer-title {
+  color: #59647a;
+  font-family: Manrope, sans-serif;
+  font-weight: 700;
 }
 
 [hidden] {
@@ -417,6 +428,12 @@ tbody tr:last-child td {
   .table-wrap {
     margin-right: -15px;
     margin-left: -15px;
+  }
+
+  .page-footer {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
   }
 
   table {
